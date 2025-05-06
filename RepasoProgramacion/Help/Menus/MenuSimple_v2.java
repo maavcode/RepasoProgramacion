@@ -6,7 +6,7 @@ public class MenuSimple_v2 {
 
 	public static Scanner sc = new Scanner(System.in);
 
-	public static void main(String[] args) {
+	public static void menu() {
 		// Declaracion de variables
 		boolean encendido = true; // Esta en true ya que empieza el programa
 		int programa = 0;
