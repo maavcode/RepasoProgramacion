@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="Help"/>
+	<classpathentry kind="src" path="UD8_ExcepcionesYFicheros"/>
+	<classpathentry kind="src" path="UD9_POOAvanzada"/>
+	<classpathentry kind="src" path="UD6_EstructurasDatosDinamicas"/>
+	<classpathentry kind="src" path="UD4_EstructurasDatosEstaticas"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
