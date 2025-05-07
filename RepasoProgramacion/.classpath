@@ -11,5 +11,6 @@
 	<classpathentry kind="src" path="UD6_EstructurasDatosDinamicas"/>
 	<classpathentry kind="src" path="UD4_EstructurasDatosEstaticas"/>
 	<classpathentry kind="src" path="General"/>
+	<classpathentry kind="src" path="Examenes"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
