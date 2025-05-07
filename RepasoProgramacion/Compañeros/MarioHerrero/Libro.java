@@ -1,4 +1,4 @@
-package ejercicioRepaso_ClubLectura;
+package MarioHerrero;
 
 import java.io.*;
 
