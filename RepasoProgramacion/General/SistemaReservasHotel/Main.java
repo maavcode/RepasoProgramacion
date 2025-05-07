@@ -1,9 +1,8 @@
 package SistemaReservasHotel;
 
-public class Main {
+public class Main implements Reservable{
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 

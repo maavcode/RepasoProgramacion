@@ -12,5 +12,6 @@
 	<classpathentry kind="src" path="UD4_EstructurasDatosEstaticas"/>
 	<classpathentry kind="src" path="General"/>
 	<classpathentry kind="src" path="Examenes"/>
+	<classpathentry kind="src" path="Compañeros"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
