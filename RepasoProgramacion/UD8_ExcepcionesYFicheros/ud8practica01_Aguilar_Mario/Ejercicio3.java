@@ -1,10 +1,7 @@
 package ud8practica01_Aguilar_Mario;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Ejercicio3 {
 	
@@ -19,9 +16,10 @@ public class Ejercicio3 {
 	}
 	
 	public static void cruzarArchivos(String alumnosFile, String asignaturasFile, String salidaFile) throws IOException {
-        try (Scanner scAlumnos = new Scanner(new File(alumnosFile));
-             Scanner scAsignaturas = new Scanner(new File(asignaturasFile));
-             FileWriter fw = new FileWriter(salidaFile)) {
+		Scanner scAlumnos = new Scanner(new File(alumnosFile));
+		Scanner scAsignaturas = new Scanner(new File(asignaturasFile));
+		FileWriter fw = new FileWriter(salidaFile);
+		try {
             
             // Saltar cabeceras
             scAlumnos.nextLine();
@@ -31,8 +29,8 @@ public class Ejercicio3 {
             fw.write("NIA;NOMBRE;APELLIDO;ASIGNATURA\n");
             
             // Leer primer registro de cada archivo
-            String alumno = scAlumnos.hasNextLine() ? scAlumnos.nextLine() : null;
-            String asignatura = scAsignaturas.hasNextLine() ? scAsignaturas.nextLine() : null;
+            String alumno = scAlumnos.nextLine();
+            String asignatura = scAsignaturas.nextLine();
             
             while (alumno != null && asignatura != null) {
                 String[] datosAlumno = alumno.split(";");
@@ -66,6 +64,13 @@ public class Ejercicio3 {
                     }
                 }
             }
-        }
+		} finally {
+	        // Cerrar el FileWriter
+	        try {
+	            fw.close();
+	        } catch (IOException e) {
+	            System.err.println("Error al cerrar el archivo");
+	        }
+	    }
     }
 }

@@ -16,7 +16,8 @@ public class Ejercicio1 {
 
     public static ArrayList<String> leerYOrdenarArchivo(String nombreArchivo, String cabeceraEsperada) throws IOException {
         ArrayList<String> lineas = new ArrayList<>();
-        try (Scanner sc = new Scanner(new File(nombreArchivo))) {
+        File f = new File(nombreArchivo);
+        try (Scanner sc = new Scanner(f)) {
             if (sc.hasNextInt()) {
                 int numFilas = sc.nextInt();
                 sc.nextLine(); // Consumir salto de línea

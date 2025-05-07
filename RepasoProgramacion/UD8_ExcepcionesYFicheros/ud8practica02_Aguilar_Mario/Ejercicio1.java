@@ -1,8 +1,7 @@
 package ud8practica02_Aguilar_Mario;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Ejercicio1 {
 
@@ -16,16 +15,16 @@ public class Ejercicio1 {
             FileWriter fw = null;
 
             while (sc.hasNextLine()) {
-                String linea = sc.nextLine().trim();
+                String linea = sc.nextLine().trim(); // Copia la linea en un string
 
-                if (linea.startsWith("<LIBRO>")) {
+                if (linea.contains("<LIBRO>")) {
                     String titulo = "";
                     StringBuilder cuerpo = new StringBuilder();
 
                     while (sc.hasNextLine()) {
                         linea = sc.nextLine().trim();
 
-                        if (linea.startsWith("<TITULO>")) {
+                        if (linea.contains("<TITULO>")) {
                             titulo = eliminarEtiquetas(linea, "TITULO") + ".txt";
                             File archivoLibro = new File("Archivos\\" + titulo);
 
@@ -38,13 +37,13 @@ public class Ejercicio1 {
                             fw = new FileWriter(archivoLibro, false);
                         }
 
-                        else if (linea.startsWith("<NOTA>")) {
+                        else if (linea.contains("<NOTA>")) {
                             String notaStr = eliminarEtiquetas(linea, "NOTA").replace("\"", "");
                             sumaNotas += Double.parseDouble(notaStr);
                             cuerpo.append("NOTA: ").append(notaStr).append("\n");
                         }
 
-                        else if (linea.startsWith("</LIBRO>")) {
+                        else if (linea.contains("</LIBRO>")) {
                             if (fw != null) {
                                 fw.write(cuerpo.toString());
                                 fw.close();
@@ -65,9 +64,9 @@ public class Ejercicio1 {
                 }
             }
 
-            double media = contadorLibros > 0 ? sumaNotas / contadorLibros : 0;
-            System.out.printf("Libros procesados: %d\nNota media: %.2f\n", contadorLibros, media);
-
+            double media = sumaNotas / contadorLibros;
+            System.out.println("Libros procesados:" + contadorLibros);
+            System.out.println(String.format("Nota media: %.2f", media));
         } catch (Exception e) {
             System.out.println("Error al procesar el archivo: " + e.getMessage());
         }
