@@ -1,4 +1,4 @@
-package ejercicio4;
+package SistemaGestionEmpleados;
 
 public class EmpleadoTiempoParcial extends Empleado {
 

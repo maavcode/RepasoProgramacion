@@ -1,4 +1,4 @@
-package ejercicio3;
+package SistemaReservasHotel;
 import java.io.*;
 
 public class Reserva implements Serializable {

@@ -1,4 +1,4 @@
-package ejercicio4;
+package SistemaGestionEmpleados;
 
 import java.util.*;
 import java.io.*;
