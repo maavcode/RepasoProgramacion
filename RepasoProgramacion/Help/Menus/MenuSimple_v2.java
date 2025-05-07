@@ -6,7 +6,7 @@ public class MenuSimple_v2 {
 
 	public static Scanner sc = new Scanner(System.in);
 
-	public static void menu() {
+	public static void main() {
 		// Declaracion de variables
 		boolean encendido = true; // Esta en true ya que empieza el programa
 		int programa = 0;
@@ -15,7 +15,7 @@ public class MenuSimple_v2 {
 			//
 			try {
 				// Preguntamos programa
-				programa = preguntarPrograma(); // Muestra los programas y obliga al usuario a elegir uno
+				programa = menu(); // Muestra los programas y obliga al usuario a elegir uno
 			} catch (InputMismatchException e) { // Tipo incorrecto
 				System.err.println("Tipo insertado incorrectamente");
 				sc.nextLine(); // Salto de linea
@@ -47,7 +47,7 @@ public class MenuSimple_v2 {
 		}
 	}
 
-	public static int preguntarPrograma() throws Exception { // Devuelve un programa
+	public static int menu() throws Exception { // Devuelve un programa
 		// Muestra los programas y devuelve el numero de programas
 		int programas = mostrarProgramas();
 		// Pregunta programa
